@@ -83,4 +83,25 @@ function ZbadajPierwiastek(Z, A, okres, grupa, element){
     document.getElementById(`pierw`).style.boxShadow = "1px 1px 10px 13px yellow";
 }
 
+dni = ["poniedziałek","wtorek","środa","czwartek","piątek","sobota","niedziela"]
+
+
+
+function WypiszDate(){
+dat = new Date()
+document.body.innerHTML = "" 
+document.write("Dzisiaj jest ")
+document.write(dni[dat.getDay()-1])
+document.write(" a godzina to: ")
+document.write(Intl.DateTimeFormat('default').format() + ", ")
+document.write(dat.getHours() > 10 ? dat.getHours() : "0" + dat.getHours())
+document.write(":")
+document.write(dat.getMinutes() > 10 ? dat.getMinutes() : "0" + dat.getMinutes())
+document.write(":")
+document.write(dat.getSeconds()> 10 ? dat.getSeconds() : "0" + dat.getSeconds())
+
+}
+
+window.setInterval(WypiszDate, 1000)
+
 
